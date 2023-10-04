@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="off_white_ddd">#dddddd</color>
+    <color name="off_white_999">#999999</color>
+    <color name="black_50">#80000000</color>
+    <color name="primary_yellow_theme">#c30e58</color>
+    <color name="secondary_theme">#893e14</color>
+    <color name="gray">#999999</color>
+    <color name="green_whatsapp">#25D366</color>
+    <color name="nine">#e6ffff</color>
+    <color name="twelve">#e6ffe6</color>
+    <color name="ten">#ffe6ff</color>
+
+    <color name="blue">#0000ff</color>
+    <color name="blue_google">#1a0dab</color>
+    <color name="blue_solitude">#ebf1ff</color>
+    <color name="pattens_blue">#D1E5FF</color>
+
+    <color name="off_black_222">#FF222222</color>
+    <color name="off_black_444">#FF444444</color>
+    <color name="off_black_666">#FF666666</color>
+    <color name="black_25">#40000000</color>
+    <color name="black_10">#1a000000</color>
+    <color name="red_theme">#960000</color>
+    <color name="off_white_bbb">#91C2CE</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_50">#80FFFFFF</color>
+
+    <color name="three">#ffff64</color>
+
+</resources>

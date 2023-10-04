@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    android:animateLayoutChanges="true"
+    app:cardCornerRadius="8dp"
+    app:strokeColor="@color/off_white_ddd"
+    app:strokeWidth="1dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:animateLayoutChanges="true">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vPHotelSlider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tLSliderDots"
+            android:layout_width="75dp"
+            android:layout_height="24dp"
+            android:background="@color/transparent"
+            android:layout_marginBottom="8dp"
+            app:tabBackground="@drawable/cab_selector"
+            app:tabIndicatorHeight="0dp"
+            app:layout_constraintEnd_toEndOf="@id/vPHotelSlider"
+            app:layout_constraintStart_toStartOf="@id/vPHotelSlider"
+            app:layout_constraintBottom_toBottomOf="@id/vPHotelSlider"
+            android:animateLayoutChanges="true"/>
+
+        <TextView
+            android:id="@+id/tVHotelName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Hotel Apaar Diu"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vPHotelSlider"/>
+
+        <LinearLayout
+            android:id="@+id/llLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tVHotelName">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="4dp"
+                android:src="@drawable/ic_location"
+                app:tint="@color/primary_yellow_theme" />
+
+            <TextView
+                android:id="@+id/tVAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Near Diu Fort, Diu"
+                android:textColor="@color/black"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llServices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llLocation">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="4dp"
+                android:src="@drawable/wifi" app:tint="#393535" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Free Wifi"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/monitor"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LCD TV"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/cctv"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Security"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_margin="4dp"
+                    android:src="@drawable/hot"  />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Geyser"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llServices">
+
+            <TextView
+                android:id="@+id/tVMrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="₹ 20,000"
+                android:textSize="12dp"
+                android:textColor="#524C4C"/>
+
+            <TextView
+                android:id="@+id/tVdiscounted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="₹18,300"
+                android:layout_marginLeft="4dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16dp"/>
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Per Night"
+            android:textColor="@color/black"
+                android:layout_marginHorizontal="4dp"
+                android:textSize="10dp"/>
+        </LinearLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mCVBookRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/primary_yellow_theme"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tVBook"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Book Now"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iVArrow"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_margin="1dp"
+                    android:maxWidth="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_arrow_right_24"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>

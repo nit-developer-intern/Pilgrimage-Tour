@@ -1,0 +1,107 @@
+<!-- review_item.xml -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- User Profile Section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="2dp"
+        android:orientation="horizontal">
+
+        <!-- User Profile Image (Circular) -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/ic_noofperson"
+            android:layout_marginEnd="16dp"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#EFEBEB"
+            app:tint="@color/primary_yellow_theme" />
+
+        <!-- User Name and City -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tVYatriName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kritika Sethi"
+                android:textSize="16dp"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tVCity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Berlin, Germany"
+                android:textStyle="bold"
+                android:layout_marginVertical="2dp"
+                android:textSize="14sp"
+                android:textColor="@color/off_white_999" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Rating Bar -->
+    <RatingBar
+        android:id="@+id/rBIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/RatingBar"
+        android:layout_marginTop="8dp"
+        android:numStars="5"
+        android:stepSize="1"
+        android:rating="4.5" />
+
+    <TextView
+        android:id="@+id/tvHotelName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hotel Urbane"
+        android:layout_marginTop="4dp"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/rBIndicator" />
+
+    <!-- User Review Text -->
+    <TextView
+        android:id="@+id/tVReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/black"
+        android:text="This is a sample review text. It can be quite long, so make sure to handle ellipsis if needed."
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/tVTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14dp"
+        android:text="23/09/23  17:05 PM"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tVName"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/viewLineUnderReviewButton"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="8dp"
+        android:background="@color/off_white_ddd" />
+
+</LinearLayout>

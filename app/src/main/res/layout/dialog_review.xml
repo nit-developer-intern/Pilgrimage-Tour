@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:maxWidth="350dp"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/tVPackageDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Package Name"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCVName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tVPackageDialog"
+        app:strokeColor="@color/off_white_ddd"
+        app:strokeWidth="1dp">
+
+
+        <EditText
+            android:id="@+id/eTName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@null"
+            android:focusable="true"
+            android:gravity="start"
+            android:hint="Enter your name"
+            android:textColor="@color/black"
+            android:textColorHint="@color/off_black_666"
+            android:textSize="16dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCVCity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mCVName"
+        app:strokeColor="@color/off_white_ddd"
+        app:strokeWidth="1dp">
+
+
+        <EditText
+            android:id="@+id/eTCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@null"
+            android:focusable="true"
+            android:fontFamily="@font/roboto"
+            android:gravity="start"
+            android:hint="Enter your city"
+            android:textColor="@color/black"
+            android:textColorHint="@color/off_black_666"
+            android:textSize="16dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <RatingBar
+        android:id="@+id/rB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:numStars="5"
+        android:rating="4"
+        android:stepSize="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCVCity" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCVReview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rB"
+        app:strokeColor="@color/off_white_ddd"
+        app:strokeWidth="1dp">
+
+
+        <EditText
+            android:id="@+id/eTReview"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:background="@null"
+            android:focusable="true"
+            android:fontFamily="@font/roboto"
+            android:gravity="start"
+            android:hint="Enter your Review"
+            android:inputType="textMultiLine"
+            android:textColor="@color/black"
+            android:textColorHint="@color/off_black_666"
+            android:textSize="16dp" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <Button
+        android:id="@+id/bTCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_yellow_theme"
+        android:text="Cancel"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCVReview" />
+
+    <Button
+        android:id="@+id/bTSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/primary_yellow_theme"
+        android:gravity="center"
+        android:text="Submit"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintStart_toEndOf="@+id/bTCancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mCVReview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

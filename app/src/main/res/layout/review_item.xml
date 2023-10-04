@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="8dp"
+    android:animateLayoutChanges="true">
+
+
+    <RatingBar
+        android:id="@+id/rBIndicator"
+        style="@style/RatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="40dp"
+        android:isIndicator="true"
+        android:stepSize="0.5"
+        android:progressBackgroundTint="@color/off_white_ddd"
+        android:progressTint="@color/primary_yellow_theme"
+        android:rating="3"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPackageName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chardham Yatra By Helicopter"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:textSize="16dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/rBIndicator" />
+
+    <TextView
+        android:id="@+id/tVReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="Review of My Package"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPackageName" />
+
+    <TextView
+        android:id="@+id/tVName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Name"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/off_black_666"
+        app:layout_constraintTop_toBottomOf="@+id/tVReview"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="8dp" />
+
+    <TextView
+        android:id="@+id/tVCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="16dp"
+        android:text="New Delhi"
+        android:padding="4dp"
+        android:textStyle="bold"
+        android:textColor="@color/off_black_666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tVName"
+        app:layout_constraintTop_toBottomOf="@+id/tVReview" />
+
+
+    <TextView
+        android:id="@+id/tVTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="17:05"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tVName"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/off_white_ddd"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tVTime"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tVExc1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:drawableStart="@drawable/ic_outline_close_24"
+        android:drawablePadding="8dp"
+        android:text="Due to the limited space inside the helicopter, only 5 kg of luggage per passenger will be permitted during each ride."
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:drawableTint="#ff0000" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

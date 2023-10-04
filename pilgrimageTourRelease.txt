@@ -1,0 +1,22 @@
+
+ key store path: D:\PilgrimageTour\pilgrimagetourindia.jks
+
+password: pilgrimage
+
+alias: pilgrimage_key0
+
+password: pilgrimage
+
+certificate first & last name: Pilgrimage Tour
+
+organizational unit: Pilgrimage Tour
+
+organization: Pilgrimage Tour
+
+city or localty: New Delhi
+
+state or province: Delhi
+
+country code: 91
+
+India's pilgrimage tours simplified, easily customize itinerary, 100+ packages

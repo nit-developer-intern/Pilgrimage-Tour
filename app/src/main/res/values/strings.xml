@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Pilgrimage Tour</string>
+
+    <string name="view_all">[ View All ]</string>
+    <string name="cab">Cab</string>
+    <string name="hotel">Hotel</string>
+    <string name="meal">Meal</string>
+    <string name="visit">Visit</string>
+    <string name="view_details">View Details</string>
+    <string name="per_person">Per Person</string>
+    <string name="book_your_trip_on">Book your trip on</string>
+    <string name="_24_7_customer_nsupport">24/7 Customer\nSupport</string>
+    <string name="best_price_nguarantee">Best Price\nGuarantee</string>
+    <string name="no_matches">No Matches</string>
+    <string name="please_wait">Please wait</string>
+    <string name="call_us">Call us</string>
+    <string name="email_us">Email Us</string>
+    <string name="_91_7838908606">+91–7838908606</string>
+    <string name="tell_us_details_of_your_holiday_plan">Tell us details of your holiday plan.</string>
+    <string name="available_monday_to_saturday_10_am_to_8_pm">Available Monday to Saturday 10 AM to 8 PM</string>
+    <string name="whatsapp_us">Whatsapp Us</string>
+    <string name="enquire_us">Enquire Us</string>
+    <string name="simplify_tour_itinerary_by_travel_experts">Simplify tour itinerary by travel experts.</string>
+    <string name="head_office">Head Office</string>
+    <string name="fulwadi_station_road">Fulwadi Station Road, Jetpur, Rajkot, Gujarat, India</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="share_app">Share App</string>
+    <string name="connect_with_us">Connect With Us:</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="terms_of_use">Terms of use</string>
+    <string-array name="addresses">
+
+        <item>"info@pilgrimagetour.in"</item>
+        <item>"info@pilgrimagetour.in"</item>
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    //FragmentBookHotel setinVM(), Razorpay integration Hotels, Modifying BookingSuccessFragment
+
+</resources>

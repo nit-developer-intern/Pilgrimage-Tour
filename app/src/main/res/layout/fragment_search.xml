@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white_ddd"
+    tools:context=".view.SearchFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/sV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:layout_margin="8dp"
+        android:theme="@style/SearchView"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/search_background"
+        app:iconifiedByDefault="false"
+        app:queryHint="Enter your Yatra Destination" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sV"
+        android:padding="8dp"
+        android:visibility="invisible"
+        tools:listitem="@layout/search_fragment_item"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="@string/no_matches"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+</RelativeLayout>

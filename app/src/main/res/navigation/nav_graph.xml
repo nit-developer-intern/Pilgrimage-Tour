@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="in.tourism.pilgrimagetour.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_packagesFragment"
+            app:destination="@id/packagesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_notifyFragment"
+            app:destination="@id/notifyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_destinationsFragment"
+            app:destination="@id/destinationsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_enquiryFragment"
+            app:destination="@id/enquiryFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_cabsFragment"
+            app:destination="@id/cabsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_hotelsListFragment"
+            app:destination="@id/hotelsListFragment" />
+        <!--
+                <action
+                    android:id="@+id/action_homeFragment_to_detailsFragment"
+                    app:destination="@id/detailsFragment" />
+        -->
+    </fragment>
+    <fragment
+        android:id="@+id/packagesFragment"
+        android:name="in.tourism.pilgrimagetour.view.PackagesFragment"
+        android:label="fragment_packages"
+        tools:layout="@layout/fragment_packages">
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_packagesFragment_to_destinationsFragment"
+            app:destination="@id/destinationsFragment" />
+        <action
+            android:id="@+id/action_packagesFragment_to_enquiryFragment"
+            app:destination="@id/enquiryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="in.tourism.pilgrimagetour.view.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/notifyFragment"
+        android:name="in.tourism.pilgrimagetour.view.NotifyFragment"
+        android:label="fragment_notify"
+        tools:layout="@layout/fragment_notify" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="in.tourism.pilgrimagetour.view.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_enquiryFragment"
+            app:destination="@id/enquiryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/destinationsFragment"
+        android:name="in.tourism.pilgrimagetour.view.DestinationsFragment"
+        android:label="fragment_destinations"
+        tools:layout="@layout/fragment_destinations">
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="ism"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_destinationsFragment_to_enquiryFragment"
+            app:destination="@id/enquiryFragment" />
+        <action
+            android:id="@+id/action_destinationsFragment_to_packagesFragment"
+            app:destination="@id/packagesFragment" />
+        <action
+            android:id="@+id/action_destinationsFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/enquiryFragment"
+        android:name="in.tourism.pilgrimagetour.view.EnquiryFragment"
+        android:label="fragment_enquiry"
+        tools:layout="@layout/fragment_enquiry">
+
+        <argument
+            android:name="name"
+            app:argType="string" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/cabsFragment"
+        android:name="in.tourism.pilgrimagetour.view.CabsFragment"
+        android:label="fragment_cabs"
+        tools:layout="@layout/fragment_cabs" />
+    <fragment
+        android:id="@+id/hotelsListFragment"
+        android:name="in.tourism.pilgrimagetour.view.HotelsListFragment"
+        android:label="fragment_hotels_list"
+        tools:layout="@layout/fragment_hotels_list" />
+
+</navigation>

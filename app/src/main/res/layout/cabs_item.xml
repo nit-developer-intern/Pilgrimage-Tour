@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:padding="1dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:strokeColor="@color/off_white_ddd"
+    app:strokeWidth="1dp"
+    android:background="@color/white"
+    app:cardElevation="8dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vPCabsSlider"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tLSliderDots"
+            android:layout_width="75dp"
+            android:layout_height="24dp"
+            android:animateLayoutChanges="true"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/vPCabsSlider"
+            app:layout_constraintEnd_toEndOf="@id/vPCabsSlider"
+            app:layout_constraintStart_toStartOf="@id/vPCabsSlider"
+            app:tabBackground="@drawable/cab_selector"
+            app:tabGravity="center"
+            app:tabIndicatorHeight="0dp" />
+
+        <TextView
+            android:id="@+id/tVModelName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:layout_marginTop="8dp"
+            android:focusable="true"
+            android:layout_marginStart="8dp"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="8dp"
+            android:scrollbars="none"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Sedan (DZire/Similar)"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/mCVGetDeals"
+            app:layout_constraintStart_toEndOf="@id/vPCabsSlider"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mCVGetDeals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="8dp"
+            android:backgroundTint="@color/primary_yellow_theme"
+            android:maxWidth="120dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/lLGear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tVModelName"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tVDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="12sp"
+                    android:gravity="center"
+                    android:maxWidth="85dp"
+                    android:maxLength="12"
+                    android:maxLines="1"
+                    android:text="Get Deals"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iVArrow"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_margin="1dp"
+                    android:maxWidth="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_arrow_right_24"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:id="@+id/lLModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:animateLayoutChanges="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lLMembers"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/tVModelName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seating"
+                android:layout_marginVertical="8dp"
+                android:textColor="#555555"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iVNumberOfSeats"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/car"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVNumberOfSeats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Seats"
+                android:textColor="#555555"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLMembers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:animateLayoutChanges="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lLLuggage"
+            app:layout_constraintStart_toEndOf="@id/lLModel"
+            app:layout_constraintTop_toBottomOf="@id/tVModelName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Capacity"
+                android:layout_marginVertical="8dp"
+                android:textColor="#555555"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iVNumberOfMEmbers"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/cabs_item_capacity"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVNumberOfMEmbers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Members"
+                android:textColor="#555555"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLLuggage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:animateLayoutChanges="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lLGear"
+            app:layout_constraintStart_toEndOf="@id/lLMembers"
+            app:layout_constraintTop_toBottomOf="@id/tVModelName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Luggage"
+                android:layout_marginVertical="8dp"
+                android:textColor="#555555"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/cabs_item_lug"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVNumberOfLuggage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 Bag"
+                android:textColor="#555555"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLGear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:animateLayoutChanges="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lLLuggage"
+            app:layout_constraintTop_toBottomOf="@id/tVModelName">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mode"
+                android:layout_marginVertical="8dp"
+                android:textColor="#555555"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/cabs_item_mode"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVTypeOfGear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manual"
+                android:textColor="#555555"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

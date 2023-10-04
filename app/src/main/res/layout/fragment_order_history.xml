@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.OrderHistoryFragment">
+
+    <ScrollView
+        android:id="@+id/sVFragOrdHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.OrderHistoryFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            tools:context=".view.OrderHistoryFragment">
+
+            <LinearLayout
+                android:id="@+id/lLUserBookHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary_yellow_theme"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iVBackArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_outline_arrow_back_24"
+                    app:tint="@color/white" />
+
+                <!--
+                            <TextView
+                                android:id="@+id/tVCurrentUser"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:scrollbars="none"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:gravity="center_vertical|end"
+                                android:layout_gravity="center_vertical"
+                                android:text=""
+                                android:textColor="@color/white"
+                                android:textSize="16dp"
+                                android:textStyle="bold"
+                                tools:text="User" />
+                -->
+
+                <TextView
+                    android:id="@+id/tVBookingHistory"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical|start"
+                    android:text="Booking History"
+                    android:textColor="@color/white"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                app:layout_constraintTop_toBottomOf="@id/lLUserBookHistory"
+                app:tabBackground="@color/white"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/primary_yellow_theme"
+                app:tabIndicatorFullWidth="true"
+                app:tabMaxWidth="0dp"
+                app:tabMinWidth="100dp"
+                app:tabMode="fixed"
+                app:tabRippleColor="@color/primary_yellow_theme"
+                app:tabSelectedTextColor="@color/primary_yellow_theme"
+                app:tabTextAppearance="@style/IncExcTabItems"
+                app:tabTextColor="@color/black"
+                tools:visibility="visible">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Incomplete Bookings" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Completed Bookings" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <LinearLayout
+                android:id="@+id/lLUserIncHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/tL"
+                tools:visibility="visible">
+
+                <!--
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Incomplete Bookings"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+                -->
+                <TextView
+                    android:id="@+id/tVNoInc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:text="No Incomplete Bookings"
+                    android:textColor="@color/off_black_222"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVIncBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/incomplete_booking_item"
+                    tools:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lLUserComHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/tL"
+                tools:visibility="visible">
+
+                <!--
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Completed Bookings"
+                                android:textColor="@color/black"
+                                android:textSize="14dp"
+                                android:textStyle="bold" />
+                -->
+                <TextView
+                    android:id="@+id/tVNoCom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:gravity="center"
+                    android:text="No Completed Bookings"
+                    android:textColor="@color/off_black_222"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVComBooking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/completed_booking_item" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintTop_toBottomOf="@id/lLUserIncHistory" />
+            <!--
+            <ProgressBar
+                android:id="@+id/pBFragmentHistory"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:indeterminateTint="@color/blue_google"
+                android:max="3"
+                android:progress="100"
+                android:progressBackgroundTint="@color/orange_theme"
+                android:progressTint="@color/blue_solitude"
+                android:secondaryProgressTint="@color/blue_solitude"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+    -->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

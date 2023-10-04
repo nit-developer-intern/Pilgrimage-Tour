@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_booking.xml"
+    app:startDestination="@id/bookingFragment1">
+
+    <fragment
+        android:id="@+id/bookingFragment1"
+        android:name="in.tourism.pilgrimagetour.view.BookingFragment1"
+        android:label="fragment_booking1"
+        tools:layout="@layout/fragment_booking1">
+
+        <action
+            android:id="@+id/action_bookingFragment1_to_couponsFragment"
+            app:destination="@id/couponsFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+        <action
+            android:id="@+id/action_bookingFragment1_to"
+            app:destination="@id/bookingFragment2" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/couponsFragment"
+        android:name="in.tourism.pilgrimagetour.view.CouponsFragment"
+        android:label="fragment_coupons"
+        tools:layout="@layout/fragment_coupons">
+        <action
+            android:id="@+id/action_couponsFragment_to_bookingFragment1"
+            app:destination="@id/bookingFragment1" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment2"
+        android:name="in.tourism.pilgrimagetour.view.BookingFragment2"
+        android:label="fragment_booking2"
+        tools:layout="@layout/fragment_booking2">
+        <action
+            android:id="@+id/action_bookingFragment2_to_bookingFragment1"
+            app:destination="@id/bookingFragment1" />
+        <action
+            android:id="@+id/action_bookingFragment2_to_bookingErrorFragment"
+            app:destination="@id/bookingErrorFragment" />
+        <action
+            android:id="@+id/action_bookingFragment2_to_bookingSuccessFragment"
+            app:destination="@id/bookingSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingErrorFragment"
+        android:name="in.tourism.pilgrimagetour.view.BookingErrorFragment"
+        android:label="fragment_booking_error"
+        tools:layout="@layout/fragment_booking_error" />
+    <fragment
+        android:id="@+id/bookingSuccessFragment"
+        android:name="in.tourism.pilgrimagetour.view.BookingSuccessFragment"
+        android:label="fragment_booking_success"
+        tools:layout="@layout/fragment_booking_success">
+
+        <action
+            android:id="@+id/action_bookingSuccessFragment_to_bookingDetailsFragment"
+            app:destination="@id/bookingDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingDetailsFragment"
+        android:name="in.tourism.pilgrimagetour.view.BookingDetailsFragment"
+        android:label="fragment_booking_details"
+        tools:layout="@layout/fragment_booking_details" />
+    <fragment
+        android:id="@+id/bookingOrderHistoryFragment"
+        android:name="in.tourism.pilgrimagetour.view.OrderHistoryFragment"
+        android:label="Booking History"
+        tools:layout="@layout/fragment_order_history">
+        <action
+            android:id="@+id/action_bookingOrder"
+            app:destination="@id/bookingFragment1" />
+        <action
+            android:id="@+id/action_bookingOrderHistory"
+            app:destination="@id/bookingDetailsFragment" />
+
+    </fragment>
+
+</navigation>

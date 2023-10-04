@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rLDetails"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/off_white_ddd"
+    tools:context=".view.PackageDetailsActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/cLActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/mCVBottom"
+        android:fitsSystemWindows="true"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        tools:context=".view.PackageDetailsActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/aBL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/cTL"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll"
+                app:titleEnabled="false">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:cardBackgroundColor="@color/off_white_ddd"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="0dp"
+                    app:layout_collapseMode="parallax">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iVTop"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/offer"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/offer"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/iVTopFilter"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:scaleType="fitXY"
+                            android:src="@color/black_50"
+                            app:layout_constraintBottom_toBottomOf="@id/iVTop"
+                            app:layout_constraintEnd_toEndOf="@id/iVTop"
+                            app:layout_constraintStart_toStartOf="@id/iVTop"
+                            app:layout_constraintTop_toTopOf="@id/iVTop" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/mCVDaysNights"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="4dp"
+                            app:layout_constraintBottom_toBottomOf="@id/iVTop"
+                            app:layout_constraintStart_toStartOf="@id/iVTop">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:animateLayoutChanges="true">
+
+                                <ImageView
+                                    android:id="@+id/iVSunny"
+                                    android:layout_width="20dp"
+                                    android:layout_height="0dp"
+                                    android:background="@color/primary_yellow_theme"
+                                    android:maxWidth="10dp"
+                                    android:maxHeight="10dp"
+                                    android:paddingStart="4dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="4dp"
+                                    android:paddingBottom="4dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_baseline_wb_sunny_24"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/tVDays"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/white" />
+
+                                <TextView
+                                    android:id="@+id/tVDays"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoSizeMaxTextSize="8sp"
+                                    android:background="@color/primary_yellow_theme"
+                                    android:gravity="top"
+                                    android:maxWidth="35dp"
+                                    android:maxHeight="20dp"
+                                    android:maxLength="6"
+                                    android:paddingStart="1dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingEnd="4dp"
+                                    android:paddingBottom="4dp"
+                                    android:text="5 Days"
+                                    android:textColor="@color/white"
+                                    android:textSize="8dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toStartOf="@id/iVNights"
+                                    app:layout_constraintStart_toEndOf="@id/iVSunny"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <ImageView
+                                    android:id="@+id/iVNights"
+                                    android:layout_width="15dp"
+                                    android:layout_height="0dp"
+                                    android:background="@color/white"
+                                    android:maxWidth="10dp"
+                                    android:maxHeight="10dp"
+                                    android:paddingStart="2dp"
+                                    android:paddingTop="4dp"
+                                    android:paddingEnd="2dp"
+                                    android:paddingBottom="4dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/ic_baseline_nightlight_round_24"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toStartOf="@id/tVNights"
+                                    app:layout_constraintStart_toEndOf="@id/tVDays"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:tint="@color/black" />
+
+                                <TextView
+                                    android:id="@+id/tVNights"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:autoSizeMaxTextSize="8sp"
+                                    android:background="@color/white"
+                                    android:gravity="top"
+                                    android:maxWidth="40dp"
+                                    android:maxHeight="20dp"
+                                    android:maxLength="8"
+                                    android:paddingStart="2dp"
+                                    android:paddingTop="2dp"
+                                    android:paddingEnd="4dp"
+                                    android:paddingBottom="4dp"
+                                    android:text="4 Nights"
+                                    android:textColor="@color/black"
+                                    android:textSize="8dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:id="@+id/tVName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="Chardham Yatra by Helicopter"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toTopOf="@id/mCVDaysNights"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/mT"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="parallax"
+                    app:layout_scrollFlags="scroll"
+                    app:navigationIcon="@drawable/ic_outline_arrow_back_24" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@color/white"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/primary_yellow_theme"
+                app:tabIndicatorFullWidth="true"
+                app:tabMaxWidth="0dp"
+                app:tabMinWidth="100dp"
+                app:tabMode="auto"
+                app:tabRippleColor="@color/primary_yellow_theme"
+                app:tabSelectedTextColor="@color/black"
+                app:tabTextAppearance="@style/PackageTabItems"
+                app:tabTextColor="@color/gray">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Overview" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Itinerary" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inclusion/Exclusion" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guidelines" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FAQs" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enquiry" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Reviews" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/sVFragmentPackageDetails"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tVOverview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Overview"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tVOverviewText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:ellipsize="end"
+                    android:focusableInTouchMode="true"
+                    android:lineSpacingExtra="4dp"
+                    android:maxLines="3"
+                    android:text="The soul enriching Char Dham Yatra"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    app:layout_constraintTop_toBottomOf="@id/tVOverview" />
+
+                <TextView
+                    android:id="@+id/tVReadMore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read More"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tVOverviewText" />
+
+                <TextView
+                    android:id="@+id/tVReadLess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_up"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read Less"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tVOverviewText" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadMore" />
+
+                <TextView
+                    android:id="@+id/tVItinerary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Itinerary"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadLess" />
+
+                <View
+                    android:id="@+id/viewLineItinerary"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tVItinerary" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/viewLineItinerary"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/itinerary_days_item" />
+
+                <View
+                    android:id="@+id/vLineOverIncExcTabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/rVDays" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tLInclusionsEx"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/vLineOverIncExcTabs"
+                    app:tabBackground="@color/white"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/primary_yellow_theme"
+                    app:tabIndicatorFullWidth="true"
+                    app:tabMaxWidth="0dp"
+                    app:tabMinWidth="100dp"
+                    app:tabMode="fixed"
+                    app:tabRippleColor="@color/primary_yellow_theme"
+                    app:tabSelectedTextColor="@color/primary_yellow_theme"
+                    app:tabTextAppearance="@style/IncExcTabItems"
+                    app:tabTextColor="@color/black">
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Inclusions" />
+
+                    <com.google.android.material.tabs.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Exclusions" />
+
+                </com.google.android.material.tabs.TabLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVInclusions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tLInclusionsEx"
+                    tools:itemCount="6"
+                    tools:listitem="@layout/inclusions_item" />
+
+                <TextView
+                    android:id="@+id/tVReadMore2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read More"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rVInclusions" />
+
+                <TextView
+                    android:id="@+id/tVReadLess2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_up"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read Less"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rVInclusions" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadMore2" />
+
+                <TextView
+                    android:id="@+id/tVGuidelines"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="Guidelines for travelers"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadMore2" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVGuidelines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tVGuidelines"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/guidelines_item" />
+
+                <TextView
+                    android:id="@+id/tVReadMoreGuid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read More"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rVGuidelines" />
+
+                <TextView
+                    android:id="@+id/tVReadLessGuid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_up"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read Less"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rVGuidelines" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadMoreGuid" />
+
+                <TextView
+                    android:id="@+id/tVFAQs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:padding="8dp"
+                    android:text="FAQs"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadMoreGuid" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVFAQs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@id/tVFAQs"
+                    tools:itemCount="3"
+                    tools:listitem="@layout/faq_item" />
+
+                <TextView
+                    android:id="@+id/tVReadMoreFAQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:drawableEnd="@drawable/ic_down"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read More"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rVFAQs" />
+
+                <TextView
+                    android:id="@+id/tVReadLessFAQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:clickable="true"
+                    android:drawableEnd="@drawable/ic_up"
+                    android:drawableTint="@color/primary_yellow_theme"
+                    android:padding="8dp"
+                    android:text="Read Less"
+                    android:textColor="@color/primary_yellow_theme"
+                    android:textSize="14dp"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/rVFAQs" />
+
+
+                <View
+                    android:id="@+id/viewLineUnderFAQ"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/tVReadMoreFAQ" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/mCVNeedHelp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:cardBackgroundColor="@color/blue_solitude"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLineUnderFAQ">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:animateLayoutChanges="true">
+
+                        <TextView
+                            android:id="@+id/tVNeedHelpTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto"
+                            android:text="Need Pilgrimage Tour's Help?"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tVNeedHelp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Are you interested in planning a Tour now? It takes only 2 minutes!"
+                            android:textColor="@color/black"
+                            android:textSize="14dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tVNeedHelpTitle" />
+
+                        <Button
+                            android:id="@+id/buttonEnquiry"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:backgroundTint="@color/blue_google"
+                            android:text="quick Enquiry"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/tVNeedHelp"
+                            app:shapeAppearanceOverlay="@style/ExtendedFAB" />
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/mCVCallHelp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:padding="8dp"
+                            app:cardCornerRadius="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/buttonEnquiry"
+                            app:layout_constraintTop_toTopOf="@id/buttonEnquiry"
+                            app:shapeAppearanceOverlay="@style/ExtendedFAB"
+                            app:strokeColor="@color/black"
+                            app:strokeWidth="1dp">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:animateLayoutChanges="true"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/iVPhone"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:src="@drawable/ic_baseline_call_24"
+                                    app:tint="@color/primary_yellow_theme" />
+
+                                <TextView
+                                    android:id="@+id/tVPhoneNumber"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:layout_weight="1"
+                                    android:autoSizeMinTextSize="10dp"
+                                    android:fontFamily="@font/roboto"
+                                    android:gravity="center"
+                                    android:maxLines="1"
+                                    android:paddingRight="8dp"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <View
+                    android:id="@+id/viewLineOverWriteReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/mCVNeedHelp" />
+
+                <FrameLayout
+                    android:id="@+id/fLWriteReview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/viewLineOverWriteReview">
+
+                    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+                        android:id="@+id/eFABWriteReview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginVertical="8dp"
+                        android:backgroundTint="@color/white"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Write a Review"
+                        android:textAlignment="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/primary_yellow_theme"
+                        android:textSize="16sp"
+                        app:shapeAppearanceOverlay="@style/ExtendedFAB" />
+
+
+                </FrameLayout>
+
+
+                <View
+                    android:id="@+id/viewLineUnderReviewButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/off_white_ddd"
+                    app:layout_constraintTop_toBottomOf="@id/fLWriteReview" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rVReviews"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="16dp"
+                    android:clickable="true"
+                    android:nestedScrollingEnabled="false"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewLineUnderReviewButton"
+                    tools:listitem="@layout/review_item" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mCVBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:animateLayoutChanges="true"
+        android:visibility="invisible"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="16dp"
+        app:strokeColor="@color/off_white_ddd"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/gradient">
+            <!--<TextView
+                android:id="@+id/tVYouPayCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="₹"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="₹10,000" />
+
+            <TextView
+                android:id="@+id/tVWithTaxes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:text="(with taxes)"
+                android:textColor="@color/off_black_444"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@id/tVYouPayCost"
+                app:layout_constraintStart_toEndOf="@id/tVYouPayCost"
+                app:layout_constraintTop_toTopOf="@id/tVYouPayCost" />
+
+            <TextView
+                android:id="@+id/tVShowBreakup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="Show breakup"
+                android:textColor="@color/blue_google"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tVYouPayCost" />-->
+            <TextView
+                android:id="@+id/mCVtVMrp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:text="₹ "
+                android:textColor="@color/off_black_444"
+                android:textSize="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="₹10,000" />
+
+            <TextView
+                android:id="@+id/mCVtVDiscounted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:text="₹"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mCVtVMrp"
+                tools:text="₹10,000" />
+
+            <TextView
+                android:id="@+id/tVPerPerson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:gravity="center"
+                android:text="(Per Person)"
+                android:textColor="@color/off_black_444"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/mCVtVDiscounted"
+                app:layout_constraintStart_toEndOf="@id/mCVtVDiscounted"
+                app:layout_constraintTop_toTopOf="@id/mCVtVDiscounted" />
+
+            <!--
+                        <Button
+                            android:id="@+id/buttonContinueBooking"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:backgroundTint="@color/orange_theme"
+                            android:gravity="center"
+                            android:text="Book Now"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="14dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:shapeAppearanceOverlay="@style/ExtendedFAB" />
+            -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/buttonContinueBooking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                app:cardBackgroundColor="@color/primary_yellow_theme"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="4dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="0dp"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:text="Proceed"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center"
+                        android:padding="0dp"
+                        android:text="to booking"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center" />
+
+</RelativeLayout>

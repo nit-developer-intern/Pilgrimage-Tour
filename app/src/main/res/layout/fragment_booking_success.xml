@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:animateLayoutChanges="true"
+    android:orientation="vertical"
+    tools:context=".view.BookingSuccessFragment">
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iVicon"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        app:civ_border_width="2dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/pay_success"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVPaymentSuccess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin ="16dp"
+        android:fontFamily="cursive"
+        android:shadowColor="#0D1732"
+        android:text="Payment Successful"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iVicon" />
+
+    <TextView
+        android:id="@+id/tVThankYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin ="16dp"
+        android:text="Thank You for choosing us. Here are all the booking details:-"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVPaymentSuccess" />
+
+    <TableLayout
+        android:id="@+id/tLDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/off_white_ddd"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tVThankYou"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <TableRow
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Booking ID:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVOrderId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Order Id"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tRHotelName"
+            android:layout_margin="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center_vertical|start"
+                android:text="Hotel Name:"
+                android:textAllCaps="false"
+                android:textColor="@color/blue_google"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tVHotel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:text="Hotel Name " />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tRPackageName"
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Package Name:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVPackageName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Package"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/tRDuration"
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Tour Duration"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="1 Day"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tRCheckIn"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center_vertical|start"
+                android:text="Check-in Date:"
+                android:textAllCaps="false"
+                android:textColor="@color/blue_google"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tVCheckIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:text="TravelDate" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tRCheckOut"
+            android:layout_marginHorizontal="1dp"
+            android:layout_marginBottom="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center_vertical|start"
+                android:text="Check-out Date:"
+                android:textAllCaps="false"
+                android:textColor="@color/blue_google"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tVCheckOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:text=""
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="14dp"
+                android:textStyle="bold"
+                tools:text="TravelDate" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:id="@+id/tRTravelDate"
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Travel date:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVTravelDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="23 September ,2022"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+        <TableRow
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Number of Persons:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVnumberofPersons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="3"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+        <TableRow
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Total Cost:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVtotalCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="10,000"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+        <TableRow
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Cost Paid:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVUserCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="1000"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+        <TableRow
+            android:layout_margin="1dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/white">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="Cost Due:"
+                android:textColor="@color/blue_google"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical|start" />
+
+            <TextView
+                android:id="@+id/tVamountDue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin ="8dp"
+                android:text="9000"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="end" />
+
+
+        </TableRow>
+
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/tVNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="+917838908606"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tLDetails" />
+
+    <TextView
+        android:id="@+id/tVRep"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:layout_marginHorizontal="8dp"
+        android:gravity="center"
+        android:text="Our representative will contact you soon. You can also reach us on call."
+        android:textAllCaps="false"
+        android:textColor="@color/off_black_444"
+        android:textSize="14dp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/tVNumber" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/ButtonTheme"
+        android:layout_margin="8dp"
+        android:text="Booking details"
+        android:backgroundTint="@color/primary_yellow_theme"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/buttonBrowse"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tVRep" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonBrowse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Browse packages"
+        android:textAllCaps="true"
+        style="@style/ButtonTheme"
+        android:textColor="@color/white"
+        android:textSize="14dp"
+        android:backgroundTint="@color/primary_yellow_theme"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonDetails"
+        app:layout_constraintTop_toBottomOf="@id/tVRep" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="8dp"
+    android:animateLayoutChanges="true">
+
+    <TextView
+        android:id="@+id/tVDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Day 1"
+        android:textColor="@color/primary_yellow_theme"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/lL1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tVDay">
+
+        <TextView
+            android:id="@+id/tVDeparture"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Departure Sahastradhara Helipad\nDeparture Sahastradhara Helipad"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tVDay" />
+
+        <ImageView
+            android:id="@+id/iVDownUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_down"
+            app:layout_constraintBottom_toBottomOf="@id/tVDeparture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tVDeparture"
+            app:tint="@color/black" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/lL1"
+        tools:itemCount="3"
+        tools:listitem="@layout/days_place_item" />
+
+    <LinearLayout
+        android:id="@+id/lLExpand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/rV"
+        tools:visibility="visible">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rV"
+        app:srcCompat="@drawable/all_chit8day" />
+
+    <TextView
+        android:id="@+id/tVExplanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:lineSpacingExtra="4dp"
+        android:text="Transfer to Gangotri temple, 25 km far. The drive will take 45min to 1 hour, depending on the traffic. We will offer you a car for this drive. After Darshan, back to Helipad."
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="normal"
+        app:layout_constraintTop_toBottomOf="@id/imageView"
+        tools:layout_editor_absoluteX="8dp"
+        tools:visibility="visible" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewLine1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="8dp"
+        android:background="#dddddd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lLExpand" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

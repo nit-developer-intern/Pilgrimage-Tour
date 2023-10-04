@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tVQ"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Q1."
+        android:textColor="@color/primary_yellow_theme"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/tVQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Helicopter Type and Capacity Helicopter Type and Capacity"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/iVDownUp"
+        app:layout_constraintStart_toEndOf="@id/tVQ"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/iVDownUp"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_down"
+        app:layout_constraintBottom_toBottomOf="@id/tVQuestion"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tVQuestion"
+        app:tint="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lLAnswer"
+        android:layout_margin="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tVQuestion"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ans. "
+            android:textStyle="normal"
+            android:textColor="@color/green_whatsapp"
+            android:textSize="14dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tVAnswer"
+            app:layout_constraintTop_toBottomOf="@id/tVQuestion"
+            android:text="We operate Airbus AS350 B3, BELL 407 single Engine helicopter. It is known for its high-altitude performance."
+            android:textStyle="normal"
+            android:textColor="@color/black"
+            tools:visibility="visible"
+            android:textSize="14dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="8dp"
+        android:background="@color/off_white_ddd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lLAnswer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

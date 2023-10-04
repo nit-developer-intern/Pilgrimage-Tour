@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="4dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="4dp"
+    android:layout_marginBottom="12dp"
+    android:maxWidth="170dp"
+    android:minWidth="170dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iV"
+            android:layout_width="170dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/offer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mCVDaysNights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:animateLayoutChanges="true">
+
+                <ImageView
+                    android:id="@+id/iVSunny"
+                    android:layout_width="20dp"
+                    android:layout_height="0dp"
+                    android:background="@color/primary_yellow_theme"
+                    android:maxWidth="10dp"
+                    android:maxHeight="10dp"
+                    android:paddingStart="4dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_wb_sunny_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tVDays"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tVDays"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="8sp"
+                    android:background="@color/primary_yellow_theme"
+                    android:gravity="top"
+                    android:maxWidth="35dp"
+                    android:maxHeight="20dp"
+                    android:maxLength="6"
+                    android:paddingStart="1dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="5 Days"
+                    android:textColor="@color/white"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/iVNights"
+                    app:layout_constraintStart_toEndOf="@id/iVSunny"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/iVNights"
+                    android:layout_width="15dp"
+                    android:layout_height="0dp"
+                    android:background="@color/white"
+                    android:maxWidth="10dp"
+                    android:maxHeight="10dp"
+                    android:paddingStart="2dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="2dp"
+                    android:paddingBottom="4dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_baseline_nightlight_round_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/tVNights"
+                    app:layout_constraintStart_toEndOf="@id/tVDays"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tVNights"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:autoSizeMaxTextSize="8sp"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:maxWidth="40dp"
+                    android:maxHeight="20dp"
+                    android:maxLength="8"
+                    android:paddingStart="2dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="4 Nights"
+                    android:textColor="@color/black"
+                    android:textSize="8dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tVName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:freezesText="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:padding="8dp"
+            android:scrollbars="none"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="Special Gujarat Tour"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iV" />
+
+        <LinearLayout
+            android:id="@+id/lLTrain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tVName">
+
+            <ImageView
+                android:id="@+id/iVCabs"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_train"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tVName"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/tVCab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Train"
+                android:textColor="#555555"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iVHotels" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLHotel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/lLMeal"
+            app:layout_constraintStart_toEndOf="@id/lLTrain"
+            app:layout_constraintTop_toBottomOf="@id/tVName">
+
+            <ImageView
+                android:id="@+id/iVHotels"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/hotel"
+                app:layout_constraintStart_toEndOf="@id/iVCabs"
+                app:layout_constraintTop_toBottomOf="@id/tVName"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVHotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hotel"
+                android:textColor="#555555"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iVHotels" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLMeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/lLVisit"
+            app:layout_constraintStart_toEndOf="@id/lLHotel"
+            app:layout_constraintTop_toBottomOf="@id/tVName">
+
+            <ImageView
+                android:id="@+id/iVMeals"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/meal"
+                app:layout_constraintStart_toEndOf="@id/iVHotels"
+                app:layout_constraintTop_toBottomOf="@id/tVName"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVMeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/meal"
+                android:textColor="#555555"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iVHotels" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLVisit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/lLMeal"
+            app:layout_constraintTop_toBottomOf="@id/tVName">
+
+            <ImageView
+                android:id="@+id/iVSightseeing"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:src="@drawable/binocular"
+                app:layout_constraintStart_toEndOf="@id/iVMeals"
+                app:layout_constraintTop_toBottomOf="@id/tVName"
+                app:tint="#555555" />
+
+            <TextView
+                android:id="@+id/tVVisit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/visit"
+                android:textColor="#555555"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tVMrp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:text="20,000"
+            android:textColor="#555555"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/tVDiscounted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lLVisit" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/mCVDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/primary_yellow_theme"
+            android:maxWidth="120dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lLTrain">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tVDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="1dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="12sp"
+                    android:gravity="center"
+                    android:maxWidth="85dp"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:text="@string/view_details"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iVArrow"
+                    android:layout_width="10dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_margin="1dp"
+                    android:maxWidth="20dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_arrow_right_24"
+                    app:tint="@color/white" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tVDiscounted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:maxWidth="70dp"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:text="₹18,300"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tVPerPerson"
+            app:layout_constraintEnd_toEndOf="@id/tVMrp"
+            app:layout_constraintTop_toBottomOf="@id/tVMrp" />
+
+        <TextView
+            android:id="@+id/tVPerPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/per_person"
+            android:textColor="#555555"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tVDiscounted" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
